@@ -8,25 +8,35 @@
     font-family: 'Proxima Nova';
     src: url('./fonts/poxima_nova.ttf');
 }
-.btn{
-    padding:  10px 15px;
+
+.btn {
+    padding: 10px 15px;
     border: none;
     border-radius: 3px;
     font-family: 'Proxima Nova';
     font-weight: 600;
     font-size: 13px;
-    cursor:pointer;
+    cursor: pointer;
 }
+
 .btn_primary {
     background-color: rgba(1, 138, 190, 1);
-    color:#fff;
+    color: #fff;
 }
-.btn_secondary{
+
+.btn_secondary {
     background-color: rgba(255, 255, 255, 1);
-    color:rgba(1, 138, 190, 1);
+    color: rgba(1, 138, 190, 1);
 }
 
+.header_block {
+    font-family: 'El Messiri';
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 58.8px;
+    color:#FFF;
 
+}
 
 body {
     background-color: rgba(22, 40, 49, 1);
@@ -71,7 +81,7 @@ header ul li a {
     color: rgba(255, 255, 255, 1)
 }
 
-.top{
+.top {
     margin-top: 20px;
     margin-bottom: 150px;
     height: 600px;
@@ -80,105 +90,295 @@ header ul li a {
     justify-content: center;
 }
 
-.img_bg{
+.img_bg {
     position: absolute;
 
     border-radius: 10px;
-} 
-.top_content{
+}
+
+.top_content {
     top: 0;
     position: relative;
     display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
-.top_title{
+
+.top_title {
     display: flex;
     align-items: center;
     margin-bottom: 50px;
 }
-.top_title h1{
+
+.top_title h1 {
     margin: 0 66px;
-    color:#fff;
+    color: #fff;
     font-family: 'El Messiri';
     font-weight: 700;
     font-size: 24px;
     line-height: 33.6px;
 }
-.top_title img{
+
+.top_title img {
     width: 28px;
     height: 14px;
 }
-.top_content h2{
+
+.top_content h2 {
     font-family: 'El Messiri';
     font-weight: 700;
     font-size: 64px;
     line-height: 89.6px;
     width: 587px;
     text-align: center;
-    color:#fff;
+    color: #fff;
 }
 
-.session{
+.session {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.card_list{
-    width: 100%;
-    gap:12px 24px;
-    display :grid;
-    grid-template-columns:1fr 1fr 1fr;
-    grid-template-rows:50% 50% ;
+
+.session_title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 100px;
 }
 
-.card_item-large{
+.session_title h2 {
+    margin: 0 45px;
+}
+
+.session_title img {
+    width: 28px;
+    height: 14px;
+}
+
+.card_list {
+    width: 100%;
+    gap: 12px 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 50% 50%;
+}
+
+.card_item-large {
     display: flex;
     grid-row-start: 1;
     grid-row-end: 3;
     border-radius: 10px;
-    background-color: gray;
+    align-items: end;
     width: 416px;
     height: 540px;
-    /* margin: 12px; */
-}
-.card_item{
-    display: flex;
-    background-color: gray;
-    width: 416px;
-    height: 258px;
-border-radius: 10px;
-/* margin: 12px; */
+
 }
 
-/* 
-.card_element {
+.card_item {
+    display: flex;
+    align-items: end;
     width: 416px;
     height: 258px;
     border-radius: 10px;
-    grid-column-start: 2;
-    grid-column-end: span 3 ;
-    
-    margin: 12px;
+
 }
-.card_element-vertical{
-    grid-column-start: 1;
-    height: 560px;
-}
-.card_list-standart{
-    display: flex;
-    flex-wrap: wrap;
-} */
-.card_item img{
+
+.card_item-content img {
     position: absolute;
     z-index: -1;
 }
-.card_item h3{
+
+.card_item-content h3 {
     font-family: 'El Messiri';
     font-weight: 700;
     font-size: 24px;
     margin-left: 40px;
     margin-bottom: 30px;
+    color: #fff;
+}
+
+.feedback {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1736px;
+    margin-left: -220px;
+    overflow: hidden;
+}
+
+.feedback_title {
+    display: flex;
+    align-items: center;
+    margin: 150px 0 100px;
+}
+
+.feedback_title img {
+    width: 28px;
+    height: 14px;
+}
+.feedback_title h2{
+    margin: 45px ;
+}
+
+
+.feedback ul {
+    position: relative;
+    right: -275px;
+    display: flex;
+}
+
+.feedback li {
+    width: 500px;
+    height: 276px;
+    background-color: rgba(1, 138, 190, 1);
+    opacity: .3;
+    margin: 0 25px;
+    border-radius: 10px;
+    padding: 50px 60px;
+}
+
+.feedback li.primary {
+    width: 636px;
+    height: 350px;
+    opacity: 1;
+}
+
+.feedback h3 {
+    font-family: 'Proxima Nova';
+    font-weight: 700;
+    font-size: 16px;
+    color: #FFF;
+    margin-bottom: 15px;
+
+}
+
+.feedback li.primary h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.feedback li.primary p {
+    font-size: 14px;
+    line-height: 19.6px;
+}
+
+.feedback p {
+    font-family: 'Proxima Nova';
+    font-weight: 300;
+    font-size: 10px;
+    color: #FFF;
+    line-height: 14px;
+}
+.feedback_dots{
+    display: flex;
+}
+.feedback_dots-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+    margin-bottom: 150px;
+}
+.feedback_dots li{
+    width: 16px;
+    height: 16px;background-color: #FFF;
+    opacity:.3;
+    margin: 0 10px;
+    border-radius: 3px;
+}
+.feedback_dots li.primary{
+    opacity:1;
+}
+
+.about_title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+}
+.about_title h2{
+    margin: 0 45px;
+}
+.about_title img{
+    width: 28px;
+    height: 14px;
+}
+.about_block{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 100px;
+    align-items: center;
+}
+.about_block-content{
+    width: 466px;
+}
+.about_block-content h3{
+    font-family: 'Proxima Nova';
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 33.6px;
+    color:#FFF;
+    margin-bottom: 30px;
+}
+.about_block-content p{
+    font-family: 'Proxima Nova';
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 22.4px;
     color:#fff;
+}
+
+.price{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.price_title{
+    display: flex;
+    align-items: center;
+    margin-bottom: 100px;
+}
+.price_title img{
+    width: 28px;
+    height: 14px;
+}
+
+.price_title h2{
+    margin: 0 23px;
+}
+.price_content-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.price_content{
+    width: 416px;
+}
+.price_content li img{
+    width: 18px;
+    height: 9px;
+    margin-right: 20px;
+}
+.price_content li{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    color:#FFF;
+}
+.price_content li div{
+    display: flex;
+}
+footer{
+    margin-top: 90px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+footer h4{
+    color:#FFF;
+    font-family: 'Proxima Nova';
+    font-weight: 400;
+    font-size: 14px;
 }

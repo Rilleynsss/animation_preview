@@ -1,0 +1,50 @@
+.price {
+    margin-top: 120px;
+    margin-bottom: 180px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.price_title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.price_title img {
+    width: 28px;
+    height: 14px;
+}
+
+.price_title h2 {
+    margin: 0 23px;
+}
+
+.price_content-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price_content {
+    width: 416px;
+}
+
+.price_content li img {
+    width: 18px;
+    height: 9px;
+    margin-right: 20px;
+}
+
+.price_content li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    color: #FFF;
+}
+
+.price_content li div {
+    display: flex;
+}

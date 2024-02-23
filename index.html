@@ -8,25 +8,26 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&display=swap" rel="stylesheet">
     <link rel="icon" href="./img/favicon.ico">
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./style/style.css" />
     <title>Ritm Style</title>
 </head>
 
 <body>
-    <div class="container">
-        <header>
+    <div class="container show">
+        <header >
             <img src="./img/logo.png" alt="logo">
             <ul>
-                <li><a href="#top">Главная</a></li>
-                <li><a href="#session">Сеансы</a></li>
-                <li><a href="#feedback">Отзывы</a></li>
-                <li><a href="#about">Обо мне</a></li>
-                <li><a href="#price">Абонименты</a></li>
-                <li><a href="#">Локация</a></li>
+                <li><a id="headerLink" href="#top">Главная</a></li>
+                <li><a id="headerLink" href="#session">Сеансы</a></li>
+                <li><a id="headerLink" href="#feedback">Отзывы</a></li>
+                <li><a id="headerLink" href="#about">Обо мне</a></li>
+                <li><a id="headerLink" href="#price">Абонименты</a></li>
             </ul>
-            <button class="btn btn_primary">Записаться на сеанс</button>
+            <!-- <button class="btn btn_primary">Записаться на сеанс</button> -->
         </header>
-        <div id="top" class="top">
+        <span id="top"></span>
+        <div  class="top">
+            
             <img src="./img/top_bg.png" alt="" class="img_bg">
             <div class="top_content">
                 <div class="top_title">
@@ -38,7 +39,9 @@
                     RitmStyle</h2>
             </div>
         </div>
-        <div id="session" class="session">
+        <span id="session"></span>
+
+        <div class="session">
             <div class="session_title">
                 <img src="./img/left_session.png" alt="">
                 <h2 class="header_block">Сеансы RitmStyle</h2>
@@ -64,7 +67,8 @@
 
             </div>
         </div>
-        <div id="feedback" class="feedback">
+        <span id="feedback"></span>
+        <div  class="feedback">
             <div class="feedback_title">
                 <img src="./img/left_session.png" alt="">
                 <h2 class="header_block">Отзывы</h2>
@@ -154,7 +158,9 @@
                 <li></li>
             </ul>
         </div>
-        <div id="about" class="about">
+        <span id="about"></span>
+
+        <div  class="about">
             <div class="about_title">
                 <img src="./img/left_session.png" alt="">
                 <h2 class="header_block">Об RitmStyle</h2>
@@ -187,7 +193,9 @@
                 
             </div>
         </div>
-        <div id="price" class="price">
+        <span id="price"></span>
+
+        <div class="price">
             <div class="price_title">
                 <img src="./img/left_session.png" alt="">
                 <h2 class="header_block">Стоимость сеансов</h2>
@@ -231,7 +239,7 @@
     <h4>Сделано d-e-n.info</h4>
 </footer>
     </div>
-    
+    <script src="./script/index.js"></script>
 </body>
 
 </html>

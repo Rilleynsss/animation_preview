@@ -1,0 +1,43 @@
+.about_title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.about_title h2 {
+    margin: 0 45px;
+}
+
+.about_title img {
+    width: 28px;
+    height: 14px;
+}
+
+.about_block {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+    align-items: center;
+}
+
+.about_block-content {
+    width: 466px;
+}
+
+.about_block-content h3 {
+    font-family: 'Proxima Nova';
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 33.6px;
+    color: #FFF;
+    margin-bottom: 30px;
+}
+
+.about_block-content p {
+    font-family: 'Proxima Nova';
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 22.4px;
+    color: #fff;
+}

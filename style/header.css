@@ -1,0 +1,30 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height:60px;
+    position: fixed;
+    z-index: 10;
+    width: 1296px;
+    background-color: rgba(22, 40, 49, 0.389);
+    /* margin-top: -160px; */
+}
+
+header ul {
+    display: flex;
+}
+
+header ul li {
+    margin-right: 50px;
+}
+
+header ul li:last-child {
+    margin-right: 0;
+}
+
+header ul li a {
+    font-family: 'Proxima Nova';
+    font-weight: 400;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 1)
+}

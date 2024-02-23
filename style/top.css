@@ -1,0 +1,53 @@
+.top {
+    margin-top: 150px;
+    margin-bottom: 160px;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img_bg {
+    position: absolute;
+
+    border-radius: 10px;
+}
+
+.top_content {
+    top: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.top_title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.top_title h1 {
+    margin: 0 66px;
+    color: #fff;
+    font-family: 'El Messiri';
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 33.6px;
+}
+
+.top_title img {
+    width: 28px;
+    height: 14px;
+}
+
+.top_content h2 {
+    font-family: 'El Messiri';
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 89.6px;
+    width: 587px;
+    text-align: center;
+    color: #fff;
+}

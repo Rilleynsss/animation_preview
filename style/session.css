@@ -1,0 +1,63 @@
+.session {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.session_title {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.session_title h2 {
+    margin: 0 45px;
+}
+
+.session_title img {
+    width: 28px;
+    height: 14px;
+}
+
+.card_list {
+    width: 100%;
+    gap: 12px 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 50% 50%;
+}
+
+.card_item-large {
+    display: flex;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    border-radius: 10px;
+    align-items: end;
+    width: 416px;
+    height: 540px;
+
+}
+
+.card_item {
+    display: flex;
+    align-items: end;
+    width: 416px;
+    height: 258px;
+    border-radius: 10px;
+
+}
+
+.card_item-content img {
+    position: absolute;
+    z-index: -1;
+}
+
+.card_item-content h3 {
+    font-family: 'El Messiri';
+    font-weight: 700;
+    font-size: 24px;
+    margin-left: 40px;
+    margin-bottom: 30px;
+    color: #fff;
+}

@@ -28,3 +28,7 @@ header ul li a {
     font-size: 14px;
     color: rgba(255, 255, 255, 1)
 }
+
+header ul li a.active{
+    color:rgb(76, 195, 255);
+}

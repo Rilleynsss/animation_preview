@@ -1,4 +1,5 @@
 .feedback {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -23,13 +24,18 @@
 }
 
 
-.feedback ul {
+/* .feedback ul {
     position: relative;
     right: -275px;
     display: flex;
-}
+} */
 
-.feedback li {
+.cards{
+    position: relative;
+        right: -275px;
+        display: flex;
+}
+.card_item {
     width: 500px;
     height: 276px;
     background-color: rgba(1, 138, 190, 1);
@@ -37,6 +43,9 @@
     margin: 0 25px;
     border-radius: 10px;
     padding: 50px 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .feedback li.primary {
@@ -84,15 +93,16 @@
     margin-bottom: 180px;
 }
 
-.feedback_dots li {
+.feedback_dot {
     width: 16px;
     height: 16px;
     background-color: #FFF;
     opacity: .3;
     margin: 0 10px;
     border-radius: 3px;
+    padding: 0;
 }
 
-.feedback_dots li.primary {
+.dot_primary {
     opacity: 1;
 }

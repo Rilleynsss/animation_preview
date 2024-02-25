@@ -25,6 +25,30 @@ const addClassActive = (id) => {
   }
 };
 
+const singleScrollHandler = () => {
+  body.addEventListener(
+    "wheel",
+    (e) => {
+      const deltaY = e.deltaY;
+      container.classList.remove("show");
+      container.classList.add("hidden");
+      setTimeout(() => {
+        if (deltaY === 100) {
+          idx + 2 <= headerLinks.length ? idx++ : "";
+          scrollDown(idx);
+        } else {
+          idx === 0 ? "" : idx--;
+          scrollUp(idx);
+        }
+        container.classList.remove("hidden");
+        container.classList.add("show");
+        singleScrollHandler();
+      }, 1000);
+    },
+    { once: true }
+  );
+};
+
 const firstLoad = () => {
   headerLinks.forEach((i, idBlock) => {
     if (window.location.hash == i.getAttribute("href")) {
@@ -38,22 +62,7 @@ const firstLoad = () => {
     }
   });
   addClassActive(idx);
-  body.addEventListener("wheel", (e) => {
-    const deltaY = e.deltaY;
-    container.classList.remove("show");
-    container.classList.add("hidden");
-    setTimeout(() => {
-      if (deltaY === 100) {
-        idx + 2 <= headerLinks.length ? idx++ : "";
-        scrollDown(idx);
-      } else {
-        idx === 0 ? "" : idx--;
-        scrollUp(idx);
-      }
-      container.classList.remove("hidden");
-      container.classList.add("show");
-    }, 1000);
-  });
+  singleScrollHandler();
 };
 
 export default firstLoad;

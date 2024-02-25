@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 100vh;
 }
 
 .session_title {
@@ -20,7 +21,7 @@
     height: 14px;
 }
 
-.card_list {
+.session-card_list {
     width: 100%;
     gap: 12px 24px;
     display: grid;
@@ -28,7 +29,7 @@
     grid-template-rows: 50% 50%;
 }
 
-.card_item-large {
+.session-card_item_large {
     display: flex;
     grid-row-start: 1;
     grid-row-end: 3;
@@ -39,7 +40,7 @@
 
 }
 
-.card_item {
+.session-card_item {
     display: flex;
     align-items: end;
     width: 416px;

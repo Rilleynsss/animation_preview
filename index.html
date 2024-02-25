@@ -17,7 +17,7 @@
         <header >
             <img src="./img/logo.png" alt="logo">
             <ul>
-                <li><a class="active" id="headerLink" href="#top">Главная</a></li>
+                <li><a class="active"  id="headerLink" href="#top">Главная</a></li>
                 <li><a id="headerLink" href="#session">Сеансы</a></li>
                 <li><a id="headerLink" href="#feedback">Отзывы</a></li>
                 <li><a id="headerLink" href="#about">Обо мне</a></li>
@@ -26,17 +26,23 @@
             <!-- <button class="btn btn_primary">Записаться на сеанс</button> -->
         </header>
         <span id="top"></span>
-        <div  class="top">
+        <div style="border-radius: 10px solid gray;"  class="top">
             
             <img src="./img/top_bg.png" alt="" class="img_bg">
-            <div class="top_content">
-                <div class="top_title">
-                    <img src="./img/left_title.png" alt="">
-                    <h1>Укрепление здоровья</h1>
-                    <img src="./img/right_titile.png" alt="">
+            <div class="top_content rotate-container">
+                <div class="rotate-element">
+                    <!-- <div class="rotate-container"> -->
+                    <div class="top_title">
+                        <img id="textShadowAnim" src="./img/left_title.png" alt="">
+                        <h1 id="textShadowAnim" >Укрепление здоровья</h1>
+                        <img src="./img/right_titile.png" alt="">
+                    </div>
+                    <!-- </div> -->
+                    <div >
+                        <h2 id="textShadowAnim">Акватерапия
+                            RitmStyle</h2>
+                    </div>
                 </div>
-                <h2>Акватерапия
-                    RitmStyle</h2>
             </div>
         </div>
         <span id="session"></span>
@@ -44,23 +50,23 @@
         <div class="session">
             <div class="session_title">
                 <img src="./img/left_session.png" alt="">
-                <h2 class="header_block">Сеансы RitmStyle</h2>
+                <h2 id="textShadowAnim" class="header_block">Сеансы RitmStyle</h2>
                 <img src="./img/right_session.png" alt="">
             </div>
-            <div class="card_list">
-                <div class="card_item-large card_item-content"><img src="./img/card_bg-vertical.png" alt="">
+            <div class="session-card_list">
+                <div class="session-card_item_large card_item-content"><img src="./img/card_bg-vertical.png" alt="">
                     <h3>Стандартный RitmStyle</h3>
                 </div>
-                <div class="card_item card_item-content"><img src="./img/card_bg.png" alt="">
+                <div class="session-card_item card_item-content"><img src="./img/card_bg.png" alt="">
                     <h3>Стандартный RitmStyle</h3>
                 </div>
-                <div class="card_item card_item-content"><img src="./img/card_bg.png" alt="">
+                <div class="session-card_item  card_item-content"><img src="./img/card_bg.png" alt="">
                     <h3>Стандартный RitmStyle</h3>
                 </div>
-                <div class="card_item card_item-content"><img src="./img/card_bg.png" alt="">
+                <div class="session-card_item  card_item-content"><img src="./img/card_bg.png" alt="">
                     <h3>Стандартный RitmStyle</h3>
                 </div>
-                <div class="card_item card_item-content"><img src="./img/card_bg.png" alt="">
+                <div class="session-card_item  card_item-content"><img src="./img/card_bg.png" alt="">
                     <h3>Стандартный RitmStyle</h3>
                 </div>
 
@@ -74,8 +80,8 @@
                 <h2 class="header_block">Отзывы</h2>
                 <img src="./img/right_session.png" alt="">
             </div>
-            <ul>
-                <li>
+            <ul class="cards">
+                <li class="card_item">
                     <h3>Кира Иванова</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Netus diam risus morbi nulla dictum.
                         Urna mi orci gravida
@@ -90,7 +96,7 @@
                         mollis aliquam elit.
                         Facilisi nam nulla pulvinar mauris vel lacinia venenatis.</p>
                 </li>
-                <li class="primary">
+                <li class="card_item  primary">
                     <h3>Кира Иванова</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Netus diam risus morbi nulla dictum.
                         Urna mi orci
@@ -109,7 +115,7 @@
                         mollis aliquam elit.
                         Facilisi nam nulla pulvinar mauris vel lacinia venenatis.</p>
                 </li>
-                <li>
+                <li class="card_item">
                     <h3>Кира Иванова</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Netus diam risus morbi nulla dictum.
                         Urna mi orci
@@ -128,7 +134,7 @@
                         mollis aliquam elit.
                         Facilisi nam nulla pulvinar mauris vel lacinia venenatis.</p>
                 </li>
-                <li>
+                <li class="card_item">
                     <h3>Кира Иванова</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Netus diam risus morbi nulla dictum.
                         Urna mi orci
@@ -149,15 +155,16 @@
                 </li>
 
             </ul>
+            <div class="feedback_dots-container">
+                <ul class="feedback_dots">
+                    <li  class=" feedback_dot dot_primary"></li>
+                    <li class="feedback_dot" ></li>
+                    <li class="feedback_dot"></li>
+                    <li class="feedback_dot"></li>
+                </ul>
+            </div>
         </div>
-        <div class="feedback_dots-container">
-            <ul class="feedback_dots">
-                <li class="primary"></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-        </div>
+        
         <span id="about"></span>
 
         <div  class="about">

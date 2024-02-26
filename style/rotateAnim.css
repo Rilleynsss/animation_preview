@@ -1,12 +1,11 @@
 .rotate-container{
-    width: 100%;
-    height: 100%;
     transform-style: preserve-3d;
-    perspective: 1000px;
+    perspective: 1000px;display: flex;
+    justify-content: center;
     
 }
 .rotate-element{
-    width: 100%;
+    /* width: 100%; */
     height: 100%;
     /* background-color: gray; */
     flex-direction: column;

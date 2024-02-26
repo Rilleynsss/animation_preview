@@ -6,3 +6,8 @@
     opacity:1;
     transition:all 1s
 }
+
+.swipeCard{
+    transform: rotateY(360deg);
+    transition: 1s;
+}

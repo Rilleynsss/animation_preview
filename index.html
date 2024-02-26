@@ -25,19 +25,19 @@
             </ul>
             <!-- <button class="btn btn_primary">Записаться на сеанс</button> -->
         </header>
+
         <span id="top"></span>
-        <div style="border-radius: 10px solid gray;"  class="top">
+        <div class="top">
             
-            <img src="./img/top_bg.png" alt="" class="img_bg">
+            <img id="moveElement" src="./img/top_bg.png" alt="" class="img_bg">
             <div class="top_content rotate-container">
-                <div class="rotate-element">
-                    <!-- <div class="rotate-container"> -->
+                <div id="rotateAndShadowElement" class="rotate-element">
+
                     <div class="top_title">
-                        <img id="textShadowAnim" src="./img/left_title.png" alt="">
+                        <img  src="./img/left_title.png" alt="">
                         <h1 id="textShadowAnim" >Укрепление здоровья</h1>
                         <img src="./img/right_titile.png" alt="">
                     </div>
-                    <!-- </div> -->
                     <div >
                         <h2 id="textShadowAnim">Акватерапия
                             RitmStyle</h2>
@@ -45,29 +45,33 @@
                 </div>
             </div>
         </div>
-        <span id="session"></span>
 
+        <span id="session"></span>
         <div class="session">
-            <div class="session_title">
+            <div class="session_title rotate-container">
                 <img src="./img/left_session.png" alt="">
-                <h2 id="textShadowAnim" class="header_block">Сеансы RitmStyle</h2>
+                <h2 id="rotateAndShadowElement" class="header_block">Сеансы RitmStyle</h2>
                 <img src="./img/right_session.png" alt="">
             </div>
             <div class="session-card_list">
-                <div class="session-card_item_large card_item-content"><img src="./img/card_bg-vertical.png" alt="">
-                    <h3>Стандартный RitmStyle</h3>
+                <div class="rotate-container">
+                    <div id="rotateElement" data-swipe="true" class="session-card_item_large card_item-content"><img src="./img/card_bg-vertical.png" alt="">
+                        <h3>Стандартный RitmStyle</h3>
+                    </div>
                 </div>
-                <div class="session-card_item card_item-content"><img src="./img/card_bg.png" alt="">
-                    <h3>Стандартный RitmStyle</h3>
-                </div>
-                <div class="session-card_item  card_item-content"><img src="./img/card_bg.png" alt="">
-                    <h3>Стандартный RitmStyle</h3>
-                </div>
-                <div class="session-card_item  card_item-content"><img src="./img/card_bg.png" alt="">
-                    <h3>Стандартный RitmStyle</h3>
-                </div>
-                <div class="session-card_item  card_item-content"><img src="./img/card_bg.png" alt="">
-                    <h3>Стандартный RitmStyle</h3>
+                <div class="session-cards_container">
+                    <div class="session-card_item card_item-content"><img src="./img/card_bg.png" alt="">
+                        <h3>Стандартный RitmStyle</h3>
+                    </div>
+                    <div class="session-card_item  card_item-content"><img src="./img/card_bg.png" alt="">
+                        <h3>Стандартный RitmStyle</h3>
+                    </div>
+                    <div class="session-card_item  card_item-content"><img src="./img/card_bg.png" alt="">
+                        <h3>Стандартный RitmStyle</h3>
+                    </div>
+                    <div class="session-card_item  card_item-content"><img src="./img/card_bg.png" alt="">
+                        <h3>Стандартный RitmStyle</h3>
+                    </div>
                 </div>
 
 

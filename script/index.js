@@ -1,31 +1,23 @@
 import firstLoad from "./scrollAnimation.js";
+import { checkHashForAnimation } from "./swipeAnimation.js";
 import { transformAnimation, types } from "./transformAnimation.js";
-const topContent = document.querySelector(".rotate-element");
+const rotateAndShadowElement = document.querySelectorAll(
+  "#rotateAndShadowElement"
+);
 const body = document.querySelector("body");
-const imgBg = document.querySelector(".img_bg");
-const textShadow = document.querySelectorAll("#textShadowAnim");
+const moveElement = document.querySelector("#moveElement");
 
-body.addEventListener("mousemove", (e) => {
-  let cords = {
-    X: -e.view.innerWidth / 2 + e.clientX,
-    Y: e.view.innerHeight / 2 - e.clientY,
-  };
-  //   console.log(e);
-  //   console.log(cords.Y);
-  transformAnimation(topContent, types.rotate);
-  transformAnimation(imgBg, types.move);
-  //   imgBg.setAttribute(
-  //     "style",
-  //     `transform:translateX(${-cords.X / 100}px) translateY(${
-  //       -(-cords.Y) / 100
-  //     }px) `
-  //   );
-  textShadow.forEach((element) => {
-    element.setAttribute(
-      "style",
-      `text-shadow:${-cords.X / 150}px ${cords.Y / 100}px 1px #000`
-    );
+const swipeElement = document.querySelector("[data-swipe]");
+if (window.location.hash == "#session") {
+  console.log("session");
+}
+
+body.addEventListener("mousemove", (event) => {
+  rotateAndShadowElement.forEach((element) => {
+    transformAnimation(event, element, types.rotateAndShadow);
   });
+  transformAnimation(event, moveElement, types.move);
 });
 
 firstLoad();
+checkHashForAnimation();

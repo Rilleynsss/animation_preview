@@ -1,3 +1,5 @@
+import { swipeCard } from "./swipeAnimation.js";
+
 const body = document.querySelector("body");
 const container = document.querySelector(".container");
 const headerLinks = document.querySelectorAll("#headerLink");
@@ -18,8 +20,7 @@ const scrollDown = (id) => {
 
 const addClassActive = (id) => {
   window.location.hash = headerLinks[id].getAttribute("href");
-  let localHash = window.location.hash;
-  localHash = headerLinks[id].getAttribute("href");
+  let localHash = headerLinks[id].getAttribute("href");
   if (localHash === headerLinks[id].getAttribute("href")) {
     headerLinks[id].classList.add("active");
   }

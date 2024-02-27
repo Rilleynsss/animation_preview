@@ -1,69 +1,116 @@
-import { swipeCard } from "./swipeAnimation.js";
-
-const body = document.querySelector("body");
-const container = document.querySelector(".container");
 const headerLinks = document.querySelectorAll("#headerLink");
+const body = document.querySelector("body");
 
-let idx = 0;
+const getBlockWithClassName = (item) => {
+  return document.querySelector(`.${item.getAttribute("href").slice(1)}`);
+};
+const getIdPage = (list) => {
+  let localHash = window.location.hash;
+  let currentId;
+  list.forEach((item, idx) => {
+    if (localHash === item.getAttribute("href")) {
+      currentId = idx;
+    }
+  });
 
-const scrollUp = (id) => {
-  headerLinks[id + 1].classList.remove("active");
-  addClassActive(id);
-  document.querySelector(headerLinks[id].getAttribute("href")).scrollIntoView();
+  return currentId;
 };
 
-const scrollDown = (id) => {
-  headerLinks[id - 1].classList.remove("active");
-  addClassActive(id);
-  document.querySelector(headerLinks[id].getAttribute("href")).scrollIntoView();
-};
+const changeActiveSlideByScroll = (type) => {
+  let localId = getIdPage(headerLinks);
 
-const addClassActive = (id) => {
-  window.location.hash = headerLinks[id].getAttribute("href");
-  let localHash = headerLinks[id].getAttribute("href");
-  if (localHash === headerLinks[id].getAttribute("href")) {
-    headerLinks[id].classList.add("active");
+  switch (type) {
+    case "next":
+      localId += 1;
+      break;
+    case "prev":
+      localId -= 1;
+      break;
   }
+  if (localId <= 0) {
+    localId = 0;
+  } else if (localId == headerLinks.length) {
+    localId = headerLinks.length - 1;
+  }
+  document
+    .querySelector(`.${window.location.hash.slice(1)}`)
+    .classList.add("hide");
+  document
+    .querySelector(`.${window.location.hash.slice(1)}`)
+    .classList.remove("show");
+  setTimeout(() => {
+    headerLinks.forEach((item) => {
+      if (
+        item.getAttribute("href") != headerLinks[localId].getAttribute("href")
+      ) {
+        getBlockWithClassName(item).classList.add("hidden");
+        getBlockWithClassName(item).classList.remove("show");
+      } else {
+        getBlockWithClassName(item).classList.remove("hidden");
+        getBlockWithClassName(item).classList.add("show");
+      }
+    });
+  }, 1000);
+  window.location.hash = headerLinks[localId].getAttribute("href");
 };
 
-const singleScrollHandler = () => {
+const changeActiveSlideByClick = (e) => {
+  document
+    .querySelector(`.${window.location.hash.slice(1)}`)
+    .classList.add("hide");
+  document
+    .querySelector(`.${window.location.hash.slice(1)}`)
+    .classList.remove("show");
+  setTimeout(() => {
+    headerLinks.forEach((item) => {
+      if (item.getAttribute("href") != e.target.getAttribute("href")) {
+        getBlockWithClassName(item).classList.add("hidden");
+        getBlockWithClassName(item).classList.remove("show");
+        getBlockWithClassName(item).classList.remove("hide");
+      } else {
+        getBlockWithClassName(item).classList.remove("hidden");
+        getBlockWithClassName(item).classList.add("show");
+        getBlockWithClassName(item).classList.remove("hide");
+      }
+    });
+  }, 1000);
+};
+
+const getScrollDelta = () => {
   body.addEventListener(
     "wheel",
     (e) => {
       const deltaY = e.deltaY;
-      container.classList.remove("show");
-      container.classList.add("hidden");
+
+      if (deltaY === 100) {
+        changeActiveSlideByScroll("next");
+      } else {
+        changeActiveSlideByScroll("prev");
+      }
       setTimeout(() => {
-        if (deltaY === 100) {
-          idx + 2 <= headerLinks.length ? idx++ : "";
-          scrollDown(idx);
-        } else {
-          idx === 0 ? "" : idx--;
-          scrollUp(idx);
-        }
-        container.classList.remove("hidden");
-        container.classList.add("show");
-        singleScrollHandler();
-      }, 1000);
+        getScrollDelta();
+      }, 2000);
     },
     { once: true }
   );
 };
 
-const firstLoad = () => {
-  headerLinks.forEach((i, idBlock) => {
-    if (window.location.hash == i.getAttribute("href")) {
-      idx = idBlock;
-    }
-    if (
-      i.classList == "active" &&
-      window.location.hash != i.getAttribute("href")
-    ) {
-      i.classList.remove("active");
+export const firstLoadPage = () => {
+  headerLinks.forEach((item) => {
+    item.addEventListener("click", (e) => {
+      changeActiveSlideByClick(e);
+    });
+  });
+  headerLinks.forEach((item) => {
+    if (item.getAttribute("href") != window.location.hash) {
+      getBlockWithClassName(item).classList.add("hidden");
+      getBlockWithClassName(item).classList.remove("show");
+      getBlockWithClassName(item).classList.remove("hide");
+    } else {
+      getBlockWithClassName(item).classList.remove("hidden");
+      getBlockWithClassName(item).classList.add("show");
+      getBlockWithClassName(item).classList.remove("hide");
     }
   });
-  addClassActive(idx);
-  singleScrollHandler();
+  getScrollDelta();
 };
-
-export default firstLoad;

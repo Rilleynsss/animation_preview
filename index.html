@@ -24,14 +24,49 @@
     </header>
 
     <div class="main show">
-        <div class="content">
-            main
+        <div class="content animation-container">
+            <div data-moveContainer class="main-content dFlex-column_center">
+                <img data-move src="./img/top_bg.png" class="main-content_bg" alt="">
+                <div data-move class="dFlex-column_center">
+                    <div class="main-content_text_container dFlex">
+                        <img src="./img/left_title.png" alt="">
+                        <h1 class="main-content_text_title MessiriHight">HEALTH PROMOTION</h1>
+                        <img src="./img/right_titile.png" alt="">
+                    </div>
+                    <div>
+                        <h2 class="main-content_text_subtitle MessiriHight"> AQUATHERAPY
+                            RitmStyle</h2>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="session hidden"><div class="content">session</div></div>
-    <div class="feedback hidden"><div class="content">feedback</div></div>
-    <div class="about hidden"><div class="content">about</div></div>
-    <div class="price hidden"><div class="content">price</div></div>
+    <div class="session hidden">
+        <div data-move="" class="content">
+            <div class=" dFlex ">
+                <img src="./img/left_session.png" alt="">
+                <h2 class="MessiriHight">Сеансы RitmStyle</h2>
+                <img src="./img/right_session.png" alt="">
+            </div>
+            <div class="session-cardList">
+                <div data-rotateContainer class="animation-container" >
+                    <div data-rotate class="session-cardItem">
+                        <img src="./img/card_bg.png" alt="">
+                        <h3>Стандартный RitmStyle</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="feedback hidden">
+        <div class="content">feedback</div>
+    </div>
+    <div class="about hidden">
+        <div class="content">about</div>
+    </div>
+    <div class="price hidden">
+        <div class="content">price</div>
+    </div>
     <script type="module" src="./script/main.js"></script>
 
 </body>

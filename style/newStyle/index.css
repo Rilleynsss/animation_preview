@@ -1,17 +1,24 @@
 @import url('../animation.css');
-
-*{
+@import url('./main.css');
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+body{
+    background-color: rgba(22, 40, 49, 1);
+}
+
 li {
     list-style: none;
 }
-a{
+
+a {
     text-decoration: none;
 }
-header{
+
+header {
     position: fixed;
     width: 100%;
     background-color: rgb(134, 134, 244);
@@ -21,11 +28,31 @@ header{
     justify-content: center;
     z-index: 10;
 }
-.container{
+
+.container {
     width: 1300px;
     margin: 0 auto;
 }
-.content{
+
+.MessiriHight {
+    font-family: 'El Messiri';
+    font-weight: 700;
+    color: #Fff;
+}
+
+.dFlex {
+    display: flex;
+    align-items: center;
+}
+
+.dFlex-column_center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
     width: 100%;
     height: 100vh;
     display: flex;
@@ -33,26 +60,47 @@ header{
     justify-content: center;
     flex-direction: column;
 }
-.main,.session,.feedback,.about,.price{
+
+.main,
+.session,
+.feedback,
+.about,
+.price {
     height: 100vh;
 }
-.header-list{
+
+.header-list {
     display: flex;
 }
-.main{
-    background-color: lightgray;
-}
-.session{
 
-    background-color: lightblue;
+
+
+
+
+
+
+.session {
 }
-.feedback{
+.session-cardItem{
+    width: 416px;
+        height: 258px;
+        transition: all .2s;
+}
+.session-cardItem img{
+    position: absolute;
+}
+.session-cardItem h3{
+    position: absolute;
+}
+.feedback {
 
     background-color: lightgreen;
 }
-.about{
+
+.about {
     background-color: lightcoral;
 }
-.price{
+
+.price {
     background-color: lightcyan;
 }

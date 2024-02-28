@@ -24,6 +24,10 @@
 .show{
     animation: showAnim 1s ;
 }
+.animation-container{
+    transform-style: preserve-3d;
+    perspective: 600px;
+}
 
 .swipeCard{
     transform: rotateY(360deg);

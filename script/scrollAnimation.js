@@ -1,3 +1,5 @@
+import { update } from "./main.js";
+
 const headerLinks = document.querySelectorAll("#headerLink");
 const body = document.querySelector("body");
 
@@ -46,6 +48,7 @@ const changeActiveSlideByScroll = (type) => {
         getBlockWithClassName(item).classList.add("hidden");
         getBlockWithClassName(item).classList.remove("show");
       } else {
+        update();
         getBlockWithClassName(item).classList.remove("hidden");
         getBlockWithClassName(item).classList.add("show");
       }

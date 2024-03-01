@@ -15,11 +15,22 @@
         opacity: 0;
     }
 }
+@keyframes fRotate {
+    from{
+        transform: rotateY(0);
+    }
+    to{
+        transform: rotateY(360deg);
+    }
+}
 .hide{
     animation: hideAnim 1s;
 }
 .hidden{
     display: none;
+}
+[data-rotate]{
+    transition: transform .1s;
 }
 .show{
     animation: showAnim 1s ;
@@ -29,7 +40,6 @@
     perspective: 600px;
 }
 
-.swipeCard{
-    transform: rotateY(360deg);
-    transition: 1s;
+.full-rotate{
+    animation: fRotate 1s;
 }

@@ -1,0 +1,24 @@
+.session {}
+
+.session-text_container {
+    margin-bottom: 100px;
+
+}
+
+.session-cardItem {
+    width: 416px;
+    height: 258px;
+    margin: 30px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.session-cardItem img {
+    position: absolute;
+}
+
+.session-cardItem h3 {
+    position: absolute;
+    color: #Fff
+}

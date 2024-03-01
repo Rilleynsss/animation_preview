@@ -1,21 +1,12 @@
-const body = document.querySelector("body");
-
-export const swipeCard = () => {
-  console.log("swipe card");
+export const showCard = (item) => {
+  item.classList.remove("hidden");
+  item.classList.add("full-rotate");
+  item.classList.add("dFlex");
+  setTimeout(() => {
+    item.classList.remove("full-rotate");
+  }, 1000);
 };
-
-const createSrollEventListener = () => {
-  body.addEventListener(
-    "wheel",
-    () => {
-      const hash = window.location.hash;
-      console.log(hash);
-      createSrollEventListener();
-    },
-    { once: true }
-  );
-};
-
-export const checkHashForAnimation = () => {
-  createSrollEventListener();
+export const hideCard = (item) => {
+  item.classList.remove("dFlex");
+  item.classList.add("hidden");
 };

@@ -1,118 +1,120 @@
 import { firstLoadPage } from "./scrollAnimation.js";
+import { hideCard, showCard } from "./swipeAnimation.js";
+import { animation, types } from "./transformAnimations.js";
+const body = document.querySelector("body");
 const moveContainer = document.querySelectorAll("[data-moveContainer]");
 const moveElements = document.querySelectorAll("[data-move]");
-const body = document.querySelector("body");
 const rotateElements = document.querySelectorAll("[data-rotate]");
 const rotateContainer = document.querySelectorAll("[data-rotateContainer]");
+const roundAbout = document.querySelectorAll("[data-roundabout]");
+const roundAboutContainer = document.querySelector(
+  "[data-roundaboutContainer]"
+);
 
-const types = {
-  fullScreen: "FULL_SCREEN_ANIMATION",
-  singleItem: "SINGLE_ITEM_ANIMATION",
+const getScopeData = () => {
+  return scope;
 };
-
-const animation = (itemForListner, itemForAnimation, type, scope, options) => {
-  let transformData = [];
-  switch (type) {
-    case types.fullScreen:
-      itemForListner.addEventListener(
-        "mousemove",
-        (e) => {
-          const cords = {
-            X: -e.clientX / 2 + e.currentTarget.offsetX,
-            Y: e.clientY / 2 - e.currentTarget.offsetY,
-          };
-          console.dir(e.currentTarget);
-
-          if (options.move) {
-            transformData[0] = `translateX(${cords.X / scope.X}px) translateY(${
-              -cords.Y / scope.Y
-            }px)`;
-          }
-          if (options.rotate) {
-            transformData[1] = `rotateY(${
-              180 + cords.X / scope.X
-            }deg) rotateX(${cords.Y / scope.Y}deg)`;
-          }
-          if (options.shadow) {
-          }
-          itemForAnimation.setAttribute(
-            "style",
-            `transform:${transformData.join(" ")}`
-          );
+export const update = () => {
+  const hash = window.location.hash;
+  switch (hash) {
+    case "#main":
+      console.log("main");
+      animation(
+        moveContainer[0],
+        moveElements[0],
+        types.fullScreen,
+        {
+          X: 100,
+          Y: 90,
         },
-        { once: true }
+        { move: true, invert: true }
       );
-
-      itemForListner.addEventListener("mouseleave", () => {
-        transformData = [];
-        itemForAnimation.setAttribute("style", transformData.join(" "));
-      });
-    case types.singleItem:
-      itemForListner.addEventListener(
-        "mouseenter",
-        (e) => {
-          e.currentTarget.addEventListener("mousemove", (e) => {
-            const cords = {
-              X: -e.currentTarget.clientWidth / 2 + e.offsetX,
-              Y: e.currentTarget.clientHeight / 2 - e.offsetY,
-            };
-            if (options.move) {
-              transformData[0] = `translateX(${
-                cords.X / scope.X
-              }px) translateY(${-cords.Y / scope.Y}px)`;
-            }
-            if (options.rotate) {
-              transformData[1] = `rotateY(${
-                180 + cords.X / scope.X
-              }deg) rotateX(${cords.Y / scope.Y}deg)`;
-            }
-            if (options.shadow) {
-            }
-            itemForAnimation.setAttribute(
-              "style",
-              `transform:${transformData.join(" ")}`
-            );
-          });
+      animation(
+        moveContainer[0],
+        moveElements[1],
+        types.fullScreen,
+        {
+          X: 60,
+          Y: 40,
         },
-        { once: true }
+        { move: true }
       );
-      itemForListner.addEventListener("mouseleave", () => {
-        transformData = [];
-        itemForAnimation.setAttribute("style", transformData.join(" "));
+      rotateElements.forEach((element) => {
+        hideCard(element);
       });
+      break;
+    case "#session":
+      console.log("session");
+      rotateElements.forEach((element, idx) => {
+        setTimeout(() => {
+          showCard(element);
+        }, 500 + (idx + 1) * 600);
+      });
+
+      animation(
+        rotateContainer[0],
+        rotateElements[0],
+        types.singleItem,
+        {
+          X: 30,
+          Y: 30,
+        },
+        { move: true, rotate: true, halfRotate: false }
+      );
+      animation(
+        rotateContainer[1],
+        rotateElements[1],
+        types.singleItem,
+        {
+          X: 30,
+          Y: 30,
+        },
+        { move: true, rotate: true, invert: true, halfRotate: true }
+      );
 
       break;
+    case "#feedback":
+      let idx = 0;
+      let scope = 37.5;
+      const intervalRound = setInterval(() => {
+        roundAbout[idx].classList.add("active");
+        if (idx > 0) {
+          roundAbout[idx - 1].classList.remove("active");
+        }
+        if (idx == 0) {
+          roundAbout[roundAbout.length - 1].classList.remove("active");
+        }
+        roundAboutContainer.setAttribute(
+          "style",
+          `transform:translateX(${scope}%)`
+        );
+        idx += 1;
+
+        scope -= 25;
+        if (scope < -37.5) {
+          scope = 37.5;
+          idx = 0;
+        }
+      }, 3000);
+      body.addEventListener(
+        "wheel",
+        () => {
+          roundAbout.forEach((element) => {
+            if (element.classList[1] == "active") {
+              element.classList.remove("active");
+            }
+          });
+          roundAboutContainer.removeAttribute("style");
+          clearInterval(intervalRound);
+        },
+        { once: true }
+      );
+      rotateElements.forEach((element) => {
+        hideCard(element);
+      });
   }
 };
-animation(
-  rotateContainer[0],
-  rotateElements[0],
-  types.singleItem,
-  {
-    X: 30,
-    Y: 30,
-  },
-  { move: true, rotate: true }
-);
-animation(
-  moveContainer[0],
-  moveElements[0],
-  types.fullScreen,
-  {
-    X: 30,
-    Y: 30,
-  },
-  { move: true }
-);
-animation(
-  moveContainer[0],
-  moveElements[1],
-  types.fullScreen,
-  {
-    X: 60,
-    Y: 40,
-  },
-  { move: true }
-);
-
+body.addEventListener("click", () => {});
+window.location.replace("/#main");
+update();
 firstLoadPage();

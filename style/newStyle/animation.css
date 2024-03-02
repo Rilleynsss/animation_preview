@@ -30,7 +30,7 @@
     display: none;
 }
 [data-rotate]{
-    transition: transform .1s;
+    transition: transform .2s;
 }
 .show{
     animation: showAnim 1s ;

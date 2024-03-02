@@ -82,9 +82,7 @@ header {
 
 
 
-.feedback {
 
-}
 
 .feedback-roundabout_container{
     display: flex;
@@ -120,6 +118,19 @@ width: 636px;
 font-weight: 300;
     font-size: 14px;
         line-height: 19.6px;
+}
+.feedback_title{
+    display: flex;
+    align-items: center;
+    margin-bottom: 60px;
+}
+.feedback_title img{
+    width: 28px;
+        height: 14px;
+}
+.feedback_title h2{
+    margin: 0 45px;
+    color: #fff;
 }
 .about {
     background-color: lightcoral;

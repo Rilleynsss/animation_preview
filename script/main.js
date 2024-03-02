@@ -11,14 +11,33 @@ const roundAboutContainer = document.querySelector(
   "[data-roundaboutContainer]"
 );
 
-const getScopeData = () => {
-  return scope;
-};
 export const update = () => {
   const hash = window.location.hash;
+  if (hash != "#main") {
+    console.log("stoped");
+    animation(
+      moveContainer[0],
+      moveElements[0],
+      types.stoped,
+      {
+        X: 100,
+        Y: 90,
+      },
+      { move: true, invert: true }
+    );
+    animation(
+      moveContainer[0],
+      moveElements[1],
+      types.stoped,
+      {
+        X: 60,
+        Y: 40,
+      },
+      { move: true, stoped: true }
+    );
+  }
   switch (hash) {
     case "#main":
-      console.log("main");
       animation(
         moveContainer[0],
         moveElements[0],
@@ -74,6 +93,17 @@ export const update = () => {
 
       break;
     case "#feedback":
+      console.log(moveContainer, moveElements);
+      animation(
+        moveContainer[1],
+        moveElements[3],
+        types.fullScreen,
+        {
+          X: 70,
+          Y: 50,
+        },
+        { move: true, rotate: true, invert: true }
+      );
       let idx = 0;
       let scope = 37.5;
       const intervalRound = setInterval(() => {

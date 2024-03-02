@@ -58,6 +58,7 @@ const changeActiveSlideByScroll = (type) => {
 };
 
 const changeActiveSlideByClick = (e) => {
+  update();
   document
     .querySelector(`.${window.location.hash.slice(1)}`)
     .classList.add("hide");
@@ -71,6 +72,7 @@ const changeActiveSlideByClick = (e) => {
         getBlockWithClassName(item).classList.remove("show");
         getBlockWithClassName(item).classList.remove("hide");
       } else {
+        update();
         getBlockWithClassName(item).classList.remove("hidden");
         getBlockWithClassName(item).classList.add("show");
         getBlockWithClassName(item).classList.remove("hide");

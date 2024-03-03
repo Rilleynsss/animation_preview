@@ -5,7 +5,7 @@
 @import url('./header.css');
 @font-face {
     font-family: 'Proxima Nova';
-    src: url('../../fonts/poxima_nova.ttf');
+    src: url('/fonts/poxima_nova.ttf');
 }
 * {
     margin: 0;

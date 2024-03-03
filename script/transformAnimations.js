@@ -96,8 +96,17 @@ export const animation = (
   );
   switch (type) {
     case types.fullScreen:
-      console.dir(bindedFullScreenAnimation);
       itemForListner.addEventListener("mousemove", bindedFullScreenAnimation);
+      itemForListner.addEventListener(
+        "wheel",
+        () => {
+          itemForListner.removeEventListener(
+            "mousemove",
+            bindedFullScreenAnimation
+          );
+        },
+        { once: true }
+      );
       break;
     case types.singleItem:
       itemForListner.addEventListener("mouseenter", () => {
@@ -110,13 +119,6 @@ export const animation = (
           bindedSingleItemAnimation
         );
       });
-      break;
-    case types.stoped:
-      console.dir(bindedFullScreenAnimation);
-      itemForListner.removeEventListener(
-        "mousemove",
-        bindedFullScreenAnimation
-      );
       break;
   }
 };

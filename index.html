@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Animation Preview</title>
-    <link rel="stylesheet" href="./style/newStyle/index.css" />
+    <link rel="stylesheet" href="./style/index.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&display=swap" rel="stylesheet">
@@ -15,11 +15,10 @@
 <body>
     <header>
         <ul class="header-list">
-            <li><a id="headerLink" href="#main">Главная</a></li>
-            <li><a id="headerLink" href="#session">Сеансы</a></li>
-            <li><a id="headerLink" href="#feedback">Отзывы</a></li>
-            <li><a id="headerLink" href="#about">Обо мне</a></li>
-            <li><a id="headerLink" href="#price">Абонименты</a></li>
+            <li><a id="headerLink" href="#main">Home</a></li>
+            <li><a id="headerLink" href="#session">Session</a></li>
+            <li><a id="headerLink" href="#feedback">Feedback</a></li>
+            <li><a id="headerLink" href="#about">About me</a></li>
         </ul>
     </header>
 
@@ -45,20 +44,20 @@
         <div data-move="" class="content">
             <div class=" dFlex session-text_container ">
                 <img src="./img/left_session.png" alt="">
-                <h2 class="MessiriHight">Сеансы RitmStyle</h2>
+                <h2 class="MessiriHight">Sessions RitmStyle</h2>
                 <img src="./img/right_session.png" alt="">
             </div>
             <div class="session-cardList dFlex">
                 <div data-rotateContainer class="animation-container">
                     <div data-rotate class=" session-cardItem hidden ">
                         <img src="./img/card_bg.png" alt="">
-                        <h3 class="MessiriHight">Стандартный RitmStyle</h3>
+                        <h3 class="MessiriHight">Standard RitmStyle</h3>
                     </div>
                 </div>
                 <div data-rotateContainer class="animation-container">
                     <div data-rotate class="session-cardItem hidden">
                         <img src="./img/card_bg.png" alt="">
-                        <h3>Стандартный RitmStyle</h3>
+                        <h3>RitmStyle for family</h3>
                     </div>
                 </div>
             </div>
@@ -66,17 +65,17 @@
     </div>
     <div data-moveContainer class="feedback hidden">
         <div class="content">
-            <div  class="animation-container">
-<div data-move class="feedback_title">
-    <img src="./img/left_session.png" alt="">
-    <h2 class="MessiriHight">Отзывы</h2>
-    <img src="./img/right_session.png" alt="">
-</div>
+            <div class="animation-container">
+                <div data-move class="feedback_title">
+                    <img src="./img/left_session.png" alt="">
+                    <h2 class="MessiriHight">Feedback</h2>
+                    <img src="./img/right_session.png" alt="">
+                </div>
             </div>
-            
+
             <ul data-roundaboutContainer class="feedback-roundabout_container">
                 <li data-roundabout class="feedback-roundabout_item">
-                    <h3 class="feedback-roundabout_item-title">Кира Иванова</h3>
+                    <h3 class="feedback-roundabout_item-title">Kira Ivanova</h3>
                     <p class="feedback-roundabout_item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Netus diam risus morbi nulla dictum.
                         Urna mi orci gravida
@@ -92,7 +91,7 @@
                         Facilisi nam nulla pulvinar mauris vel lacinia venenatis.</p>
                 </li>
                 <li data-roundabout class="feedback-roundabout_item ">
-                    <h3 class="feedback-roundabout_item-title">Кира Иванова</h3>
+                    <h3 class="feedback-roundabout_item-title">Kira Ivanova</h3>
                     <p class="feedback-roundabout_item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Netus diam risus morbi nulla dictum.
                         Urna mi orci
@@ -112,7 +111,7 @@
                         Facilisi nam nulla pulvinar mauris vel lacinia venenatis.</p>
                 </li>
                 <li data-roundabout class="feedback-roundabout_item">
-                    <h3 class="feedback-roundabout_item-title">Кира Иванова</h3>
+                    <h3 class="feedback-roundabout_item-title">Kira Ivanova</h3>
                     <p class="feedback-roundabout_item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Netus diam risus morbi nulla dictum.
                         Urna mi orci
@@ -132,7 +131,7 @@
                         Facilisi nam nulla pulvinar mauris vel lacinia venenatis.</p>
                 </li>
                 <li data-roundabout class="feedback-roundabout_item">
-                    <h3 class="feedback-roundabout_item-title">Кира Иванова</h3>
+                    <h3 class="feedback-roundabout_item-title">Kira Ivanova</h3>
                     <p class="feedback-roundabout_item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Netus diam risus morbi nulla dictum.
                         Urna mi orci
@@ -156,11 +155,20 @@
         </div>
     </div>
     <div class="about hidden">
-        <div class="content">about</div>
-    </div>
-    <div class="price hidden">
-        <div class="content">price</div>
-    </div>
+        <div class="content"><div data-centerRotateContainer class="about-container animation-container">
+            <div data-centerRotate class="about-container_item_text MessiriHight">
+                <p>Hello, friend. My name is Dmitry, and this site is a mini-preview of a smaller part of the animations I can do. I
+                    can
+                    do
+                    various kinds of transition animations, transformation animations, different kinds of illumination (and
+                    everything
+                    related to them) and so on. If you need some special animation for your website or app, I'd be happy to help
+                    you.
+                </p>
+            </div>
+            <div class="about-container_item_img"><img src="./img/iStock-840862716.jpg" alt=""></div></div>
+            </div>
+        </div>
     <script type="module" src="./script/main.js"></script>
 
 </body>

@@ -10,34 +10,22 @@ const roundAbout = document.querySelectorAll("[data-roundabout]");
 const roundAboutContainer = document.querySelector(
   "[data-roundaboutContainer]"
 );
+const headerlinks = document.querySelectorAll("#headerLink");
 
 export const update = () => {
   const hash = window.location.hash;
-  if (hash != "#main") {
-    console.log("stoped");
-    animation(
-      moveContainer[0],
-      moveElements[0],
-      types.stoped,
-      {
-        X: 100,
-        Y: 90,
-      },
-      { move: true, invert: true }
-    );
-    animation(
-      moveContainer[0],
-      moveElements[1],
-      types.stoped,
-      {
-        X: 60,
-        Y: 40,
-      },
-      { move: true, stoped: true }
-    );
-  }
+  headerlinks.forEach((element) => {
+    if (element.getAttribute("href") != hash) {
+      if (element.classList == "active") {
+        element.classList.remove("active");
+      }
+    } else {
+      element.classList.add("active");
+    }
+  });
   switch (hash) {
     case "#main":
+      headerlinks[0].classList.add("active");
       animation(
         moveContainer[0],
         moveElements[0],
@@ -64,6 +52,9 @@ export const update = () => {
       break;
     case "#session":
       console.log("session");
+
+      headerlinks[1].classList.add("active");
+
       rotateElements.forEach((element, idx) => {
         setTimeout(() => {
           showCard(element);
@@ -93,7 +84,6 @@ export const update = () => {
 
       break;
     case "#feedback":
-      console.log(moveContainer, moveElements);
       animation(
         moveContainer[1],
         moveElements[3],
@@ -142,6 +132,7 @@ export const update = () => {
       rotateElements.forEach((element) => {
         hideCard(element);
       });
+    case "#about":
   }
 };
 body.addEventListener("click", () => {});

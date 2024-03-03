@@ -1,6 +1,12 @@
 @import url('./animation.css');
 @import url('./main.css');
 @import url('./session.css');
+@import url('./feedback.css');
+@import url('./header.css');
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('../../fonts/poxima_nova.ttf');
+}
 * {
     margin: 0;
     padding: 0;
@@ -22,7 +28,6 @@ a {
 header {
     position: fixed;
     width: 100%;
-    background-color: rgb(134, 134, 244);
     height: 5vh;
     display: flex;
     align-items: center;
@@ -84,58 +89,32 @@ header {
 
 
 
-.feedback-roundabout_container{
+.about-container {
     display: flex;
     justify-content: center;
-    transform: translateX(12.5%);
-    transition: all .5s;
-}
-.feedback-roundabout_item{
-    transform: scale(.8);
-    opacity: .6;
-width: 636px;
-    height: 350px;
-    background-color: rgba(1, 138, 190, 1);
-    margin: 0 25px;
-    border-radius: 10px;
-    padding: 50px 60px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    color:#Fff
-}
-.feedback-roundabout_item.active{
-    opacity: 1;
-    transform: scale(1);
-}
-.feedback-roundabout_item-title{
-    font-family: 'Proxima Nova';
-        font-size: 20px;
-    margin-bottom: 20px;
-}
-.feedback-roundabout_item-text{
-    font-family: 'Proxima Nova';
-font-weight: 300;
-    font-size: 14px;
-        line-height: 19.6px;
-}
-.feedback_title{
-    display: flex;
     align-items: center;
-    margin-bottom: 60px;
+
 }
-.feedback_title img{
-    width: 28px;
-        height: 14px;
+.about-container_item_text{
+    border-radius: 5px;
+    padding: 25px;
+    border: 1px solid rgb(76, 195, 255) ;
+    width: 40vw;
+    height: 50vh;
+    font-size: 30px;
+        margin: 20px;
+        transform: rotateY(7deg);
 }
-.feedback_title h2{
-    margin: 0 45px;
-    color: #fff;
+.about-container_item_img{
+    width: 40vw;
+    overflow: hidden;
+        margin: 20px;
+        border-radius: 5px;
+        height: 470px;
+        transform: rotateY(-7deg);
 }
-.about {
-    background-color: lightcoral;
+.about-container_item_img img{
+    transform: scale(.7) translateY(-190px) translateX(-400px);
 }
 
-.price {
-    background-color: lightcyan;
-}
+

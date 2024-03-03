@@ -136,6 +136,7 @@ export const update = () => {
   }
 };
 body.addEventListener("click", () => {});
-window.location.replace("/#main");
+console.log(window.location);
+// window.location.replace(`/#main`);
 update();
 firstLoadPage();
